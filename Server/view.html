@@ -1,0 +1,43 @@
+<table ng-controller="viewCtrl" class="text-light mx-5">
+    <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Designation</th>
+        <th>Department</th>
+        <th>Salary</th>
+        <th>Location</th>
+    </thead>
+    <tbody>
+        <tr ng-repeat="x in data | filter: test">
+            <td>{{x.emp_id}}</td>
+            <td>{{x.emp_name}}</td>
+            <td>{{x.emp_desg}}</td>
+            <td>{{x.emp_dept}}</td>
+            <td>{{x.emp_salary}}</td>
+            <td>{{x.emp_loc}}</td>
+        </tr>
+        <tr>
+            <td colspan="6" class="text-center">SEARCH</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="name" id="name" ng-model="test.emp_id" placeholder="Search by ID">
+            </td>
+            <td>
+                <input type="text" name="name" id="name" ng-model="test.emp_name" placeholder="Search by Name">
+            </td>
+            <td>
+                <input type="text" name="name" ng-model="test.emp_desg" placeholder="Search by Designation">
+            </td>
+            <td>
+                <input type="text" name="name" ng-model="test.emp_dept" placeholder="Search by Department">
+            </td>
+            <td>
+                <input type="text" name="name" ng-model="test.emp_salary" placeholder="Search by Salary">
+            </td>
+            <td>
+                <input type="text" name="name" ng-model="test.emp_loc" placeholder="Search by Location">
+            </td>
+        </tr>
+    </tbody>
+</table>

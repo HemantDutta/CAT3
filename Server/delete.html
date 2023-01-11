@@ -1,0 +1,15 @@
+<div class="update mx-5" ng-controller="delCtrl">
+    <h2 class="text-light">Delete</h2>
+    <div class="updForm">
+        <form ng-submit="delete()">
+            <div class="row">
+                <div class="inputField d-flex flex-column col-lg-5">
+                    <label for="id" class="text-light">ID</label>
+                    <select name="idSel" id="idSel" ng-options="x.emp_id for x in datas" ng-model="id">
+                        <option value="#" selected>Choose ID</option>
+                    </select>
+                </div>
+        <button type="submit" class="btn btn-outline-light mt-4">Delete</button>
+        </form>
+    </div>
+</div>

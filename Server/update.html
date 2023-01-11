@@ -1,0 +1,59 @@
+<div class="updateCont" ng-controller="updCtrl">
+    <h3 class="mx-5 text-light">Data</h3>
+    <table class="text-light mx-5">
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>Location</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="x in datas">
+                <td>{{x.emp_id}}</td>
+                <td>{{x.emp_name}}</td>
+                <td>{{x.emp_desg}}</td>
+                <td>{{x.emp_dept}}</td>
+                <td>{{x.emp_salary}}</td>
+                <td>{{x.emp_loc}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="update mx-5">
+        <h2 class="text-light">Update</h2>
+        <div class="updForm">
+            <form ng-submit="update()">
+                <div class="row">
+                    <div class="inputField d-flex flex-column col-lg-5">
+                        <label for="id" class="text-light">ID</label>
+                        <select name="idSel" id="idSel" ng-options="x.emp_id for x in datas" ng-model="id" ng-change="getID()">
+                            <option value="#" selected>Choose ID</option>
+                        </select>
+                    </div>
+                <div class="inputField d-flex flex-column col-lg-5">
+                    <label for="name" class="text-light">Name</label>
+                    <input type="text" name="name" id="name" ng-model="name" oninput="this.value = this.value.replace(/[0-9]/, '')">
+                </div>
+                <div class="inputField d-flex flex-column col-lg-5 mt-4">
+                    <label for="desg" class="text-light">Designation</label>
+                    <input type="text" name="desg" id="desg" ng-model="desg" oninput="this.value = this.value.replace(/[0-9]/, '')">
+                </div>
+                <div class="inputField d-flex flex-column col-lg-5 mt-4">
+                    <label for="dept" class="text-light">Department</label>
+                    <input type="text" name="dept" id="dept" ng-model="dept" oninput="this.value = this.value.replace(/[0-9]/, '')">
+                </div>
+                <div class="inputField d-flex flex-column col-lg-5 mt-4">
+                    <label for="sal" class="text-light">Salary</label>
+                    <input type="number" name="sal" id="sal" ng-model="sal" oninput="this.value = this.value.replace(/[A-Z][a-z]/, '')">
+                </div>
+                <div class="inputField d-flex flex-column col-lg-5 mt-4">
+                    <label for="loc" class="text-light">Location</label>
+                    <input type="text" name="loc" id="loc" ng-model="loc" oninput="this.value = this.value.replace(/[0-9]/, '')">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-outline-light mt-4">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
